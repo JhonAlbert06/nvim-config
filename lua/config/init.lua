@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config.globals")
 require("config.options")
+require("config.keymaps")
 
 local plugins = "plugins"
 
@@ -21,7 +22,7 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "tokyonight" },
+		colorscheme = { "OneDarkPro" },
 	},
 	rtp = {
 		disabled_plugins = {
@@ -43,3 +44,8 @@ local opts = {
 
 
 require("lazy").setup(plugins, opts)
+
+vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
+vim.cmd([[highlight NonText guibg=NONE ctermbg=NONE]])
+vim.cmd([[highlight LineNr guibg=NONE ctermbg=NONE]])
+vim.cmd([[highlight SignColumn guibg=NONE ctermbg=NONE]])
